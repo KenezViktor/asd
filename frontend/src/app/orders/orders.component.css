@@ -1,0 +1,34 @@
+.top {
+  width: 100%;
+  height: 5em;
+}
+
+.main {
+  text-align: center;
+}
+
+.items:hover {
+  transform: scale(1.1, 1.1);
+  filter: brightness(1.3);
+  cursor:  pointer;
+  text-decoration: underline;
+}
+
+.footer {
+  bottom: 0;
+  position: fixed;
+  background-color: black;
+  width: 100%;
+}
+
+.pictures {
+  opacity: 0.8;
+  height: 1600px;
+  background-image: url("../../img/loginback.jpg");
+}
+
+.item {
+  margin-top: 2%;
+  color: navajowhite;
+  font-size: 36px;
+}

@@ -1,0 +1,73 @@
+<div class="page-container">
+  <div class="top">
+    <div class="left col-sm-4">
+      <div class="email" (click)="asd()">
+        Need some help? <br> example@inf.d-order.cc
+      </div>
+    </div>
+    <div class="center col-sm-4">
+      <div class="main">
+        <h3>Drinks</h3> <br>
+        <hr>
+      </div>
+    </div>
+    <div class="center col-sm-4">
+      <div class="user">
+        <div class="login col-sm-6">
+          <i class="fas fa-user" (click)="loginOrLogout()"></i>
+        </div>
+        <div class="cart col-sm-6">
+          <div class="Cart col-sm-12" (click)="toCart()">
+            Cart
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu col-sm-12">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 menu-bar">
+      <div class="home col-sm-3 items" (click)="toHome()">
+        <h5>Home</h5>
+      </div>
+      <div class="search col-sm-3 items">
+        <h5><a routerLink="/search">Search</a></h5>
+      </div>
+      <div class="about col-sm-3 items">
+        <h5>About</h5>
+      </div>
+      <div class="contact col-sm-3 items">
+        <h5>Contact</h5>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="pictures col-sm-12">
+    <input type="text" placeholder="Search" [(ngModel)]="param">
+    <button (click)="search()">Ok</button>
+    <div>
+      <div>
+        <div class="item col-sm-12">
+          <div class="col-sm-2">Name</div>
+          <div class="col-sm-4">Desc</div>
+          <div class="col-sm-2">Price</div>
+          <div class="col-sm-2">
+            Set Amount
+          </div>
+        </div>
+        <div *ngFor="let items of data" class="item col-sm-12" >
+          <div class="col-sm-2">{{items.name}}</div>
+          <div class="col-sm-4">{{items.desc}}</div>
+          <div class="col-sm-2">{{items.price}}</div>
+          <div class="col-sm-2">
+            <div class="col-sm-6"><i class="fas fa-chevron-up" (click)="increase(items.quantity)"></i></div>
+            <div class="col-sm-6"><i class="fas fa-chevron-down" (click)="decrease(items.quantity)"></i></div>
+          </div>
+          <div class="col-sm-2" (click)="add(items)">Add to Cart</div>
+        </div>
+    </div>
+  </div>
+  <div class="footer col-sm-12">
+    asdasdasdasd
+  </div>
+</div>

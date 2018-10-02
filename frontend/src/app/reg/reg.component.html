@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="top col-sm-12">
+  </div>
+  <div class="middle col-sm-12">
+    <div class="right col-sm-4"></div>
+    <div class="center col-sm-4">
+      <div class="inputs">
+        <label class="field a-field a-field_a1 page__field user">
+          <input [(ngModel)]="username" class="field__input" placeholder="e.g. username" required>
+          <span class="field__label-wrap">
+            <span class="field__label">Username</span>
+          </span>
+        </label> <br>
+        <label class="field a-field a-field_a1 page__field email">
+          <input [(ngModel)]="email" class="field__input" placeholder="e.g. example@ex.cc" required>
+          <span class="field__label-wrap">
+            <span class="field__label">Email</span>
+          </span>
+        </label>
+        <br>
+        <label class="field a-field a-field_a1 page__field pass">
+          <input [(ngModel)]="password" class="field__input" placeholder="e.g. 123456" required>
+          <span class="field__label-wrap">
+            <span class="field__label">Password</span>
+          </span>
+        </label>
+        <br>
+        <div class="to-reg send" (click)="sendRegData()">
+          <a routerLink="/reg">Create Account</a>
+        </div>
+        {{error}}
+      </div>
+    </div>
+    <div class="left col-sm-4"></div>
+  </div>
+  <div class="down col-sm-12">
+  </div>
+</div>
