@@ -66,4 +66,8 @@ export class CartComponent implements OnInit {
       });
   }
 
+  customTB(index, song) {
+    return `${index}-${song.id}`;
+  }
+
 }

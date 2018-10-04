@@ -51,12 +51,12 @@
           <div class="col-sm-2">Price</div>
           <div class="col-sm-2">Total</div>
         </div>
-        <div *ngFor="let items of data" class="item col-sm-12" >
+        <div *ngFor="let items of data; let i = index; trackBy: customTB" class="item col-sm-12" >
           <div class="col-sm-2">{{items.name}}</div>
           <div class="col-sm-2">{{items.desc}}</div>
           <div class="col-sm-2">{{items.price}}</div>
-          <div class="col-sm-2" (click)="del(items)">Remove</div>
-          <div class="col-sm-2" (click)="send(items)">Send</div>
+          <div class="col-sm-2" (click)="del(items.id)">Remove</div>
+          <div class="col-sm-2" (click)="send(items.id)">Send</div>
         </div>
       </div>
     </div>

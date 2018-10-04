@@ -10,8 +10,9 @@ import {Router} from '@angular/router';
 export class HomeComponent implements OnInit {
 
   public returnedData: any;
+  public login: string = "Login";
 
-  constructor(private _backend: BackendService, private router: Router) {
+  constructor(private backend: BackendService, private router: Router) {
     localStorage.setItem('token', '');
   }
 
@@ -20,9 +21,13 @@ export class HomeComponent implements OnInit {
 
   loginOrLogout() {
     if (localStorage.getItem('token') === '') {
+      this.login = "Logout";
       this.router.navigate(['/login']);
     } else {
+      this.login = "Login";
+      this.backend.token = localStorage.getItem('token');
       localStorage.setItem('token', '');
+      this.backend.logout();
     }
   }
 

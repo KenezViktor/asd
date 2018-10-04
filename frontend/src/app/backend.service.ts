@@ -15,6 +15,7 @@ export class BackendService {
   public password: string;
   public email: string;
   public data: any;
+  public token: any;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -58,5 +59,17 @@ export class BackendService {
         error => {
           console.log(error);
         });
+  }
+
+  logout() {
+    return this.http.post('http://localhost:8000/api/users/logout', {
+      token: this.token
+    })
+      .subscribe( data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      });
   }
 }

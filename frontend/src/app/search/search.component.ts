@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
   param: string;
   public data: any = '';
   public quantity: any =  0;
+  public login: string = "Login";
 
   constructor(private router: Router, private backend: BackendService, private http: HttpClient, private cart: CartService) { }
 
@@ -20,9 +21,13 @@ export class SearchComponent implements OnInit {
   }
   loginOrLogout() {
     if (localStorage.getItem('token') === '') {
+      this.login = "Logout";
       this.router.navigate(['/login']);
     } else {
+      this.login = "Login";
+      this.backend.token = localStorage.getItem('token');
       localStorage.setItem('token', '');
+      this.backend.logout();
     }
   }
 
@@ -37,16 +42,6 @@ export class SearchComponent implements OnInit {
         error => {
           console.log(error);
         });
-  }
-
-  increase(quantity) {
-    quantity--;
-    this.quantity++;
-  }
-
-  decrease(quantity) {
-    quantity++;
-    this.quantity--;
   }
 
   add(data: any) {

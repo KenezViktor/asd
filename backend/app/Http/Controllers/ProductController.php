@@ -13,7 +13,6 @@ class ProductController extends Controller
       'name' => 'required',
       'price' => 'required',
       'desc' => 'required|max:255',
-      'quantity' => 'required',
       'token' => 'required'
     ]);
 
@@ -27,8 +26,7 @@ class ProductController extends Controller
       Products::create([
         'name' => $request->name,
         'price' => $request->price,
-        'desc' => $request->desc,
-        'quantity' => $request->quantity
+        'desc' => $request->desc
       ]);
     }
     return response()->json();

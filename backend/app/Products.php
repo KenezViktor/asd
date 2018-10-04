@@ -9,7 +9,6 @@ class Products extends Model
     protected $fillable = [
       'name',
       'price',
-      'desc',
-      'quantity'
+      'desc'
     ];
 }
